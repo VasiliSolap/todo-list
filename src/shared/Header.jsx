@@ -1,4 +1,4 @@
-function Header({ token, onSetToken, onSetEmail }) {
+function Header({ email, token, onSetToken, onSetEmail }) {
   function handleLogOff() {
     onSetToken("");
     onSetEmail("");
@@ -8,9 +8,12 @@ function Header({ token, onSetToken, onSetEmail }) {
     <header>
       <h1>Checkmate</h1>
       {token && (
-        <button type="button" onClick={handleLogOff}>
-          Log Off
-        </button>
+        <div>
+          <span>{email}</span>
+          <button type="button" onClick={handleLogOff}>
+            Log Off
+          </button>
+        </div>
       )}
     </header>
   );
